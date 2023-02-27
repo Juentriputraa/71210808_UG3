@@ -1,0 +1,12 @@
+import json
+
+data = {}
+barang = []
+data['total'] = int(input("Masukkan jumlah barang = "))
+for i in range(data['total']):
+    nama = input("Nama barang {} = ".format(i+1))
+    harga = int(input("Harga barang {} = ".format(i+1)))
+    barang.append({'nama': nama, 'harga': harga})
+data['barang'] = barang
+with open('data.json', 'w') as file:
+    json.dump(data, file, indent=4)
